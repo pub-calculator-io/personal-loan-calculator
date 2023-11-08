@@ -2,7 +2,7 @@
 Contributors: calculatorio
 Tags: 
 Requires at least: 5.0
-Tested up to: 6.3.0
+Tested up to: 6.4.0
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -12,6 +12,12 @@ After factoring the fees, insurance, and interest of a personal loan, this free 
 == Description ==
 
 After factoring the fees, insurance, and interest of a personal loan, this free personal loan calculator computes the monthly payment, true loan cost, and Annual percentage rate (APR).
+
+__Shortcode__
+
+Use the Personal Loan Calculator shortcode:
+
+`[ci_personal_loan_calculator]`
 
 Libraries in use:
 1. https://mathjs.org/
@@ -25,8 +31,11 @@ Libraries in use:
 
 1. Upload the /ci_personal_loan_calculator/ folder to the /wp-content/plugins/ directory.
 2. Activate the [Personal Loan Calculator](https://www.calculator.io/personal-loan-calculator/ "Personal Loan Calculator Homepage") plugin through the "Plugins" menu in WordPress.
-3. Configure your settings via Appearance > Widgets > Personal Loan Calculator.
-4. And you're good to go!
+
+== Usage ==
+* Add the shortcode `[ci_personal_loan_calculator]` to your page or post and configure default mortgage parameters.
+* If you are using widgets, just add the Personal Loan Calculator to the sidebar through the `Appearance -> Widgets -> Personal Loan Calculator` menu in WordPress.
+* Add the following code: `<?php display_ci_personal_loan_calculator(); ?>` to your template where you would like the Personal Loan Calculator to appear.
 
 == Screenshots ==
 1. The Personal Loan Calculator Input Form.
