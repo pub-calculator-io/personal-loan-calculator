@@ -13,6 +13,8 @@ After factoring the fees, insurance, and interest of a personal loan, this free 
 
 After factoring the fees, insurance, and interest of a personal loan, this free personal loan calculator computes the monthly payment, true loan cost, and Annual percentage rate (APR).
 
+[Personal Loan Calculator Homepage](https://www.calculator.io/personal-loan-calculator/ "Personal Loan Calculator Homepage")
+
 __Shortcode__
 
 Use the Personal Loan Calculator shortcode:
