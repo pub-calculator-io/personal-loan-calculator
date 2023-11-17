@@ -22,6 +22,7 @@ import("./assets/js/lib/chartjs/chart.js").then((e) => {
 			tealGradientStart: 'rgba(56, 248, 222, 0.16)',
 			yellowGradientStop: 'rgba(250, 219, 139, 0)',
 			purpleGradientStop: 'rgba(104, 56, 248, 0)',
+			skyGradientStop: 'rgba(56, 248, 222, 0.16)',
 			gridColor: '#DBEAFE',
 			tooltipBackground: '#fff',
 			fractionColor: '#EDE9FE',
@@ -38,6 +39,7 @@ import("./assets/js/lib/chartjs/chart.js").then((e) => {
 			tealGradientStart: 'rgba(56, 248, 222, 0.16)',
 			yellowGradientStop: 'rgba(250, 219, 139, 0)',
 			purpleGradientStop: 'rgba(104, 56, 248, 0)',
+			skyGradientStop: 'rgba(56, 248, 222, 0.16)',
 			gridColor: '#162B64',
 			tooltipBackground: '#1C3782',
 			fractionColor: '#41467D',
@@ -84,17 +86,12 @@ import("./assets/js/lib/chartjs/chart.js").then((e) => {
 			data.datasets[0].data.forEach((datapoint, index) => {
 				const { x, y } = chart.getDatasetMeta(0).data[index].tooltipPosition();
 
-				let textXPosition = x >= 110 ? 'left' : 'right';
-
-				let xLine = x >= 110 ? x + 30 : x - 30;
-				let yLine = y >= 110 ? y + 30 : y - 30;
-
+				ctx.textAlign = 'center';
 				ctx.font = '14px Inter';
-				ctx.textAlign = textXPosition;
-				ctx.fillStyle = colors[theme].textColor;
+				ctx.fillStyle = '#fff';
 				ctx.textBaseline = 'middle';
-
-				ctx.fillText(`${datapoint}%`, xLine, yLine);
+				let toolTipText = datapoint != '0' ? datapoint + '%' : '';
+				ctx.fillText(toolTipText, x, y);
 			});
 		},
 	};
@@ -124,17 +121,12 @@ import("./assets/js/lib/chartjs/chart.js").then((e) => {
 				data.datasets[0].data.forEach((datapoint, index) => {
 					const { x, y } = chart.getDatasetMeta(0).data[index].tooltipPosition();
 
-					let textXPosition = x >= 110 ? 'left' : 'right';
-
-					let xLine = x >= 110 ? x + 30 : x - 30;
-					let yLine = y >= 110 ? y + 30 : y - 30;
-
+					ctx.textAlign = 'center';
 					ctx.font = '14px Inter';
-					ctx.textAlign = textXPosition;
-					ctx.fillStyle = colors[theme].textColor;
+					ctx.fillStyle = '#fff';
 					ctx.textBaseline = 'middle';
-
-					ctx.fillText(`${datapoint}%`, xLine, yLine);
+					let toolTipText = datapoint != '0' ? datapoint + '%' : '';
+					ctx.fillText(toolTipText, x, y);
 				});
 			},
 		};
@@ -148,7 +140,7 @@ import("./assets/js/lib/chartjs/chart.js").then((e) => {
 			plugins: [customDataLabels],
 		});
 
-		donutBig.data.datasets[0].backgroundColor = [colors[theme].purple, colors[theme].sky, colors[theme].yellow];
+		donutBig.data.datasets[0].backgroundColor = [colors[theme].purple, colors[theme].yellow];
 		donutBig.update()
 	}
 
@@ -163,6 +155,10 @@ import("./assets/js/lib/chartjs/chart.js").then((e) => {
 	let purpleGradient = ctx.createLinearGradient(0, 0, 0, 1024);
 	purpleGradient.addColorStop(0, colors[theme].purpleGradientStart);
 	purpleGradient.addColorStop(1, colors[theme].purpleGradientStop);
+
+	let skyGradient = ctx.createLinearGradient(0, 0, 0, 1024);
+	skyGradient.addColorStop(0, colors[theme].skyGradientStart);
+	skyGradient.addColorStop(1, colors[theme].skyGradientStop);
 
 	let tooltip = {
 		enabled: false,
@@ -255,7 +251,7 @@ import("./assets/js/lib/chartjs/chart.js").then((e) => {
 				pointHoverBorderColor: '#5045E5',
 				stacked: true,
 				borderColor: colors[theme].sky,
-				backgroundColor: yellowGradient,
+				backgroundColor: skyGradient,
 				fill: true,
 			},
 			{
@@ -276,7 +272,7 @@ import("./assets/js/lib/chartjs/chart.js").then((e) => {
 				stack: 'combined',
 				stacked: true,
 				borderColor: colors[theme].yellow,
-				backgroundColor: purpleGradient,
+				backgroundColor: yellowGradient,
 				fill: true,
 			},
 			{
@@ -294,9 +290,9 @@ import("./assets/js/lib/chartjs/chart.js").then((e) => {
 				pointHoverBorderWidth: 2,
 				pointHoverRadius: 6,
 				pointHoverBorderColor: '#5045E5',
-				stack: 'combined',
 				stacked: true,
 				borderColor: colors[theme].purple,
+				backgroundColor: purpleGradient,
 				fill: true,
 			},
 		],
@@ -359,11 +355,12 @@ import("./assets/js/lib/chartjs/chart.js").then((e) => {
 			yellowGradient.addColorStop(1, colors[theme].yellowGradientStop);
 			purpleGradient.addColorStop(0, colors[theme].purpleGradientStart);
 			purpleGradient.addColorStop(1, colors[theme].purpleGradientStop);
-			chartLoan.data.datasets[0].backgroundColor = yellowGradient;
-			chartLoan.data.datasets[0].borderColor = colors[theme].yellow;
-			chartLoan.data.datasets[1].backgroundColor = purpleGradient;
-			chartLoan.data.datasets[1].borderColor = colors[theme].purple;
-			chartLoan.data.datasets[2].backgroundColor = colors[theme].sky;
+			chartLoan.data.datasets[1].backgroundColor = yellowGradient;
+			chartLoan.data.datasets[1].borderColor = colors[theme].yellow;
+			chartLoan.data.datasets[2].backgroundColor = purpleGradient;
+			chartLoan.data.datasets[2].borderColor = colors[theme].purple;
+			chartLoan.data.datasets[0].backgroundColor = skyGradient;
+			chartLoan.data.datasets[0].borderColor = colors[theme].sky;
 			chartLoan.options.scales.y.grid.color = colors[theme].gridColor;
 			chartLoan.options.scales.x.grid.color = colors[theme].gridColor;
 			chartLoan.options.scales.y.ticks.color = colors[theme].gridColor;
