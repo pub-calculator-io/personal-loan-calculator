@@ -1,4 +1,4 @@
-# Personal Loan Calculator WordPress Widget by [Calculator.iO](https://www.calculator.io/ "Calculator.iO Homepage")
+# Personal Loan Calculator Widget for WordPress
 
 After factoring the fees, insurance, and interest of a personal loan, this free personal loan calculator computes the monthly payment, true loan cost, and Annual percentage rate (APR).
 
