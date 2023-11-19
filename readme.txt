@@ -1,4 +1,4 @@
-=== Personal Loan Calculator by www.calculator.io ===
+=== CI Personal loan calculator ===
 Contributors: calculatorio
 Tags: personal loan calculator, calculate personal loan, personal loan interest calculator, personal loan repayment calculator, personal loan EMI calculator, personal loan eligibility calculator, personal loan affordability calculator, personal loan rate calculator, personal loan cost calculator, personal loan amount calculator
 Requires at least: 5.0

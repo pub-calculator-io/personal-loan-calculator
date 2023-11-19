@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Personal Loan Calculator by www.calculator.io
+Plugin Name: CI Personal loan calculator
 Plugin URI: https://www.calculator.io/personal-loan-calculator/
 Description: After factoring the fees, insurance, and interest of a personal loan, this free personal loan calculator computes the monthly payment, true loan cost, and Annual percentage rate (APR).
 Version: 1.0.0
