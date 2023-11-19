@@ -7,7 +7,7 @@ After factoring the fees, insurance, and interest of a personal loan, this free 
 
 ## Installation
 
-1. [Download](https://github.com/pub-calculator-io/age-calculator/archive/refs/heads/master.zip) the ZIP file of this repository.
+1. [Download](https://github.com/pub-calculator-io/personal-loan-calculator/archive/refs/heads/master.zip) the ZIP file of this repository.
 2. Upload the /personal-loan-calculator-master/ folder to the /wp-content/plugins/ directory.
 3. Activate the [Personal Loan Calculator](https://www.calculator.io/personal-loan-calculator/ "Personal Loan Calculator Homepage") plugin through the "Plugins" menu in WordPress.
 
