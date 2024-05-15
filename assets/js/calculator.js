@@ -35,7 +35,7 @@ function calculate(){
 			<td>${currencyFormat(item.principle)}</td>
 		</tr>`;
 		if((index + 1) % 12 === 0 || (index + 1) === schedule.length) {
-			let title = 'Year #{1} End'.replace('{1}', Math.ceil((index + 1) / 12).toString());
+			let title = 'Year {1} End'.replace('{1}', Math.ceil((index + 1) / 12).toString());
 			monthlyResultsHtml += `<th class="indigo text-center" colspan="5">${title}</th>`;
 		}
 		annualInterest += item.paymentToInterest;
@@ -78,7 +78,7 @@ function calculate(){
 	output.val('Monthly Payment: $207.58').replace('$207.58', currencyFormat(payment)).set('monthly-payment');
 	output.val('Total of 60 Payments: $12,454.80').replace('60', totalMonths).replace('$12,454.80', currencyFormat(totalPayments)).set('total-payments');
 	output.val('Total Interest: $2,455.07').replace('$2,455.07', currencyFormat(totalInterest)).set('total-interest');
-	output.val('Payoff Date: Dec. 2027').replace('Dec. 2027', formattedDate(payoffDate)).set('payoff-date');
+	output.val('Payoff Date: Dec 2027').replace('Dec 2027', formattedDate(payoffDate)).set('payoff-date');
 }
 
 function calculatePayment(finAmount, finMonths, finInterest){
@@ -129,7 +129,7 @@ function calculateAmortization(finAmount, finMonths, finInterest, finDate){
 }
 
 function formattedDate(date){
-	const monthNames = ["Jan", "Feb", "Marc", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 	const month = monthNames[date.getMonth()]
 	const year = date.getFullYear();
 	return month + '. ' + year;

@@ -24,7 +24,6 @@ Add the following code to your template where you would like the Personal Loan C
 == Screenshots ==
 
 1. The Personal Loan Calculator Input Form.
-2. The Personal Loan Calculator Calculation Results.
 
 == Installation ==
 
